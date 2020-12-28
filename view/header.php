@@ -57,6 +57,7 @@
 <li><a href="dashboard"  style = "color:white;">Home</a></li>
 	<li><a href="settings"  style = "color:white;"><?php $user = Session::get("user"); echo $user;?></a></li>
 	<input type = "hidden" id = "users_id" value = <?php $user = Session::get("user"); echo $user;?>>
+	<input type = "hidden" id = "client_id" value = <?php $user = Session::get("id"); echo $user;?>>
 	<li><a href="logout"  style = "color:white;">Logout</a></li>
 	<?php }else{?>
 <?php
