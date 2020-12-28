@@ -12,6 +12,8 @@ class Logout extends Controller
 	}
 
 	function index(){
-		$this->_view->render("logout");
+		Session::init();
+		Session::destroy();
+		$this->_view->render("home");
 	}
 }
