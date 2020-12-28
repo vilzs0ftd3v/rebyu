@@ -40,12 +40,12 @@
 <script>
 $(document).ready(function(){
     
-function accessSessionLogin(action,user){
+function accessSessionLogin(action,user,id){
             $.ajax({
                 url:'data/home/session_data.php',
                 type:'POST',
                 dataType:'text',
-                data:{action:action,user:user},
+                data:{action:action,user:user,id:id},
                 success:function(data){
                   
                    
@@ -79,14 +79,16 @@ if(username =="" || password ==""){
         dataType:'text',
         data:{action:'login',username:username,password:password},
         success:function(data){
+            if(data == "null"){
+                $("#loginResponse_id").html("incorrect username or password.");
+            }
             
-            $("#loginResponse_id").html(data);
 
             $("#username_id").val("");
             $("#password_id").val("");
 
-            if(data == "login successfully!"){          
-                accessSessionLogin('create',username);    
+            if(data !== "null"){          
+                accessSessionLogin('create',username,data);    
                 window.location="dashboard";
             }
         },
