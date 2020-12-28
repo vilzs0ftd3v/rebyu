@@ -1,5 +1,6 @@
 <?php
 include_once("lib/config.php");
+include_once("lib/session.php");
 include_once("lib/database.php");
 include_once("lib/app.php");
 include_once("lib/view.php");
