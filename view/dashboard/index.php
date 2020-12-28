@@ -5,9 +5,7 @@
 		
 		<div class="col-md-4">
 			<h5 style = "text-align:center;">Questions</h5>
-			<button type="button" class="btn btn-info" data-toggle="modal" data-target="#addArchiveModalID" id = "playQuestion_id">
-				+
-			</button><hr>
+			
 			<div id = "archive_id"></div>
 		</div>
 		
@@ -42,94 +40,11 @@
   </div>
 </div>
 
-<!-- Add Modal -->
-<div class="modal fade" id="questionModalId" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title" id="addModalLongTitle">Add Question</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
 
 
-      <div class="modal-body">
-	   <input type = "hidden" id = "archiveID_id" class = "form-control" placeholder = "archive name">
-	   <br>
-	  	<textarea class = "form-control" placeholder = "question" id = "question_id"></textarea>
-		  <br>
-		  <br><textarea class = "form-control" placeholder = "answer" id = "answer_id"></textarea>
-		  <br><textarea class = "form-control" placeholder = "choice A" id = "choicea_id"></textarea>
-		  <br><textarea class = "form-control" placeholder = "choice B" id = "choiceb_id"></textarea>
-		  <br><textarea class = "form-control" placeholder = "choice C" id = "choicec_id"></textarea>
-		  <br><input type = "number" placeholder = "minute/s" id = "minute_id" class = "form-control">
-		
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning" id = "saved_id">Save</button>
-      </div>
 
 
-    </div>
-  </div>
-</div>
 
-<!-- add archive modal -->
-<div class="modal fade" id="answerModalId" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-
-      <div class="modal-header" style = "color:black;">
-		<h4 id = "resultQuestion_id"></h4>&nbsp;&nbsp;&nbsp;&nbsp;<small id = "status_id"></small>
-      </div>
-
-
-      <div class="modal-body" style = "background-color:black;">
-	   <input type = "hidden" class = "form-control" id = "archiveEdit_id">
-	   
-	   
-	   <div id = "questionList_id"></div>
-      </div>
-
-      <div class="modal-footer">
-	  <button type="button" class="btn btn-warning" id = "run_id">Start</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        
-      </div>
-
-
-    </div>
-  </div>
-</div>
-
-
-<!-- add archive modal -->
-<div class="modal fade" id="addArchiveModalID" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-
-      <div class="modal-header" style = "color:black;">
-		<h5><h5>Add a group of questions</h5></h5>
-      </div>
-
-
-      <div class="modal-body" style = "background-color:black;">
-	  	<input type = "text" id = "archiveName_id" placeholder="Name" class="form-control">
-      </div>
-
-      <div class="modal-footer">
-	  <button type="button" class="btn btn-default" id = "saveNewArchive_id">Save</button>
-	  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-
-
-    </div>
-  </div>
-</div>
 
 <script>
     $(document).ready(function(){
@@ -480,29 +395,7 @@ $(document).on("click","#run_id",function(){
     
 	
 	
-	$(document).on('click','#saveNewArchive_id',function(){
-		name = $('#archiveName_id').val();
-		id = $('#users_id').val();
-		console.log(id);
-		 $.ajax({
-			url:'data/home/archive.php',
-			method:'POST',
-			dataType:"text",
-			data:{action:'create',archive_name:name,user_id:id},
-			success:function(data){
-			
-				$('#archiveName_id').val("");
-			
-				$("#addArchiveModalID").modal('hide');
-				populateArchive();
-			},
-			error:function(xhr,status,error){
-				console.log(xhr);
-				console.log(status);
-				console.log(error);
-			}
-		});  
-	});
+	
    
 
 
