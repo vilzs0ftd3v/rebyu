@@ -13,7 +13,7 @@
 	</div>
 </div>
 <!-- questions populate -->
-<div class="modal fade" id="answersModalId" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
+<div data-backdrop="static" data-keyboard="false" show="true" class="modal fade" id="answersModalId" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
 
