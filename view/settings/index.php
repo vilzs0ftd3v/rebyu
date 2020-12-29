@@ -37,7 +37,7 @@
 
 
 <!-- add archive modal -->
-<div class="modal fade" id="addArchiveModalID" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
+<div data-backdrop="static" data-keyboard="false" show="true" class="modal fade" id="addArchiveModalID" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
 
@@ -62,7 +62,7 @@
 
 
 <!-- Add Modal -->
-<div class="modal fade" id="questionModalId" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
+<div data-backdrop="static" data-keyboard="false" show="true" class="modal fade" id="questionModalId" tabindex="-1" role="dialog" aria-labelledby="AddModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
 
